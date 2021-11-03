@@ -2,7 +2,7 @@
 include 'cardapioFunctions.php';
 
 $cardapio = [
-            "salgados" => ["coxinha", "empada", "empada", "empada","empada"],
+            "salgados" => ["coxinha", "empada",],
             "acompanhamentos" => ["Feijao", "Arroz", "Farofa"],
             "refrigerantes" => ["coca-cola", "Guarana", "Mineiro", "sukita"
                                 , "fanta","skoll", "agua"],
