@@ -16,7 +16,7 @@ function verificaCardapio($cardapio, $key){
         ." não obedece a quantidade maxima de itens, retire "
         .((count($cardapio[$key]))-6)." produto(s)!!!";
     }
-
+    echo "<hr>"; 
     
 }
 
@@ -26,6 +26,7 @@ function insereItemCardapio($produto, $key, $item){
 }
 
 function mostraCardapio($cardapio){
+    echo "-------------------------------CARDAPIO-------------------------------<br><br>";
     $count =0;
     foreach($cardapio as $categorias){ 
         echo array_keys($cardapio)[ $count]." : "; 
@@ -34,7 +35,8 @@ function mostraCardapio($cardapio){
             echo $categorias[$i];
             echo "<br>";  
         }
-        echo "<br>";  
+        echo "<br>";
+        echo "--------------------------------------------------------------------------------<br><br>";
         echo "<br>";  
         $count +=1;
     }

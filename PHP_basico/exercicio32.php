@@ -15,9 +15,9 @@ foreach($cardapio as $c => $cardapios){
 }
 
 // adicionar um novo item em um determinado produto
-$item = "fritos";
-$produto = "salgados";
-$cardapio = insereItemCardapio($cardapio, $produto, $item);
+// $item = "fritos";
+// $produto = "salgados";
+// $cardapio = insereItemCardapio($cardapio, $produto, $item);
 
 echo "<br><br>";
 
