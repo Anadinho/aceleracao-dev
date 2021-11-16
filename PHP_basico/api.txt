@@ -1,0 +1,7 @@
+7851,43f6fa92-2f68-45d4-8979-dcc686ea3409,5105105105105100,tok_visa,4000000000000036,06,2025,179,9840
+9148,91db5b66-21ca-4586-9d2b-82e42a4254b6,6011000990139424,tok_mastercard_debit,4000000000000044,07,2027,826,9213
+2347,b3cdd6f3-1cb7-49ed-9bd3-61efac656588,Bytecard,9.6,McCullough-Leannon,3.8.4,72.2.6,1.123.8,3.2.9
+1733,425ce6ed-17a1-4675-99df-0ab6f1fb8853,Stella Artois,Shakespeare Oatmeal,Amber Hybrid Beer,Olympic,1275 - Thames Valley Ale,Special roast,88 IBU,3.1%,16.3°Blg
+2832,a15bd4fa-a216-4788-b876-fba7bb0b66b8,amethyst,Baby,Copper,Durable Marble Shoes,84.48,5.76,GreatDiscount885818
+9687,0e7421d9-569d-442d-b00d-10f12d41c513,196,Lenovo,iPhone 5C,iOS,T6UuMUTani3VGY4vXGia,385
+9197,bf87b063-ec79-4f05-bf6f-af246f891246,Silver,Pending,Cash,Weekly,Annual
