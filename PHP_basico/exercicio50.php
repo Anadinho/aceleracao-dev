@@ -27,11 +27,10 @@ for ($i=1; $i <151 ; $i++) {
 foreach($arrayCaminhoArquivo as $caminho){
     $infoCaminho = pathinfo($caminho);
     $infoCaminho['Tamanho'] = filesize(($caminho));
-
-    var_export($infoCaminho);
+    var_dump($infoCaminho);  
     echo "<br><br>";
 }
-
+// var_dump($arrayCaminhoArquivo);
 
 
 ?>
