@@ -13,7 +13,7 @@ foreach($ceps as $cep){
     array_push($cep_array, $dados_array);
 }
 
-var_export($cep_array[0]);
+var_export($cep_array);
 
 $arquivoCeps= fopen('ceps.txt', 'w');
 fwrite($arquivoCeps, json_encode($cep_array));
