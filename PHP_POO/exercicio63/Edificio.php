@@ -8,12 +8,12 @@ class Edificio extends Imovel{
     public function __construct($cor, $totalDePortas, $totalDeAndares, $portas)
     {
         parent::__construct($cor, $portas);
-        $this->totalDeAndates = $totalDeAndares;
+        $this->totalDeAndares = $totalDeAndares;
         $this->totalDePortas = $totalDePortas;
 
     }
 
-    function adicionarPorta(Porta $porta){
+    public function adicionarPorta(Porta $porta){
         $this->totalDePortas++;
         array_push($this->portas, $porta);
     }
@@ -25,6 +25,12 @@ class Edificio extends Imovel{
     public function getTotalDeAndares()
     {
         return $this->totalDeAndares;
+    }
+
+    
+    public function getTotalDePortas()
+    {
+        return $this->totalDePortas;
     }
 }
 

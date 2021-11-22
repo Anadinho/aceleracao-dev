@@ -69,6 +69,14 @@ class Porta {
 
         return $this;
     }
+
+    /**
+     * Get the value of aberta
+     */ 
+    public function getAberta()
+    {
+        return $this->aberta;
+    }
 }
 
 ?>

@@ -1,21 +1,20 @@
 <?php
 
 class Imovel{
-    private String $cor = "Branca";
-    private array $portas;
+    protected String $cor = "Branca";
+    protected array $portas=array();
 
     public function __construct($cor,$portas)
     {
         $this->cor = $cor;
         $this->portas = $portas;
     }
-    
+
 
     public function getPortas()
     {
         return $this->portas;
     }
-
 
     public function setPortas($portas)
     {
@@ -23,8 +22,6 @@ class Imovel{
 
         return $this;
     }
-
-
     
     public function getCor()
     {
@@ -63,6 +60,8 @@ class Imovel{
     
 
 
+
+   
 }
 
 
