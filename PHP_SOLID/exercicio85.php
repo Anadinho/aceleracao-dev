@@ -40,32 +40,32 @@ abstract class Avatar{
         $this->arma = $arma;            
     }
 
-    public abstract function atacar();
+    public abstract function lutar();
 }
 
 class Rei extends Avatar{ 
-    public function atacar()
+    public function lutar()
     {
         $this->arma->usarArma();
     }
 }
 
 class Rainha extends Avatar{ 
-    public function atacar()
+    public function lutar()
     {
         $this->arma->usarArma();
     }
 }
 
 class Duende extends Avatar{ 
-    public function atacar()
+    public function lutar()
     {
         $this->arma->usarArma();
     }
 }
 
 class Guerreiro extends Avatar{ 
-    public function atacar()
+    public function lutar()
     {
         $this->arma->usarArma();    
     }
@@ -75,6 +75,6 @@ class Guerreiro extends Avatar{
 $machado = New Machado();
 $rei = New Rei($machado);
 echo "Ataque do rei -> ";
-echo $rei->atacar();
+echo $rei->lutar();
 
 ?>
