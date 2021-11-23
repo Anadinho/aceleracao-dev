@@ -25,6 +25,4 @@ class ClienteService implements ClienteRepository{
     }
 }
 
-
-
 ?>
