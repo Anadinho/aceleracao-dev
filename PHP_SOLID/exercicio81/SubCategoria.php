@@ -7,4 +7,4 @@ class Subcategoria{
     private String $descricao;
 }
 
-<?
+?>
