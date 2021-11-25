@@ -2,7 +2,7 @@
 
 class Cliente{
     public function isValid():bool{
-        return true;
+        return false;
     }
 }
 
@@ -10,19 +10,22 @@ interface ClienteRepository{
     public function adicionarCliente(Cliente $cliente);
 }
 
-class ClienteService implements ClienteRepository{
-    public function adicionarCliente(Cliente $cliente){
+class ClienteService{
+    public function adicionarCliente(Cliente $cliente, ClienteRepository $clienteRepository)
+    {
         if(!$cliente->isValid()){
-            echo "Dados Invalidos";
+            echo "Dados inválidos";
         }
-        $repo = new ClienteRepository();
-
-        if($repo ->adicionarCliente($cliente)){
+        
+        if($clienteRepository->adicionarCliente($cliente)){
             echo "Cliente cadastrado com sucesso";
         }else{
             echo "Error";
         }
     }
 }
+
+$cliente1=New Cliente;
+
 
 ?>
