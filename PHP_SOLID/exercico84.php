@@ -23,7 +23,7 @@ function activeClients(array $clients): array
 
 function isClientActive(int $client): bool
 {
-
+    
     $clientRecord = $db->find($client);
 
     return $clientRecord->isActive();
