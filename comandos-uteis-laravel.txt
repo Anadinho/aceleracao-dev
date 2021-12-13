@@ -1,0 +1,7 @@
+composer create-project laravel/laravel aprendendo-laravel --prefer-dist
+
+php artisan make:model Assinatura -cm
+
+php artisan migrate
+
+php artisan serve
