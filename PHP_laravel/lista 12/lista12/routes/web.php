@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\AssinaturaController;
+use App\Http\Controllers\DocumentoController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/perfil', [UsuarioController::class, 'listarUsuario']);
+Route::get('/perfil', [UsuarioController::class, 'listarUsuario'])->name('listarUsuario');
+
+Route::get('/documentos', [DocumentoController::class, 'listarDocumentos'])->name('documentos.listar');
+Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento'])->name('documento.listar');
+
+Route::get('/assinaturas', [AssinaturaController::class, 'listarAssinaturas'])->name('assinaturas.listar');
+Route::get('/assinaturas/{id}', [AssinaturaController::class, 'listarAssinatura'])->name('assinatura.listar');

@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Usuario,Documento};
+use App\Models\{Usuario};
 
 class UsuarioController extends Controller
 {
     function listarUsuario(){
         $usuario = Usuario::perfilUsuario();
-        $documento = Documento::all();
-        return view('usuario.perfil', compact('usuario' , 'documento'));
-        
+        return view('usuario.perfil', compact('usuario'));   
     }
+
+    
 }
