@@ -20,9 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/perfil', [UsuarioController::class, 'listarUsuario'])->name('listarUsuario');
-
+Route::get('/documento/criar', [DocumentoController::class, 'criarDocumento'])->name('documento.criar');
 Route::get('/documentos', [DocumentoController::class, 'listarDocumentos'])->name('documentos.listar');
 Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento'])->name('documento.listar');
+Route::post('/documento/novo', [DocumentoController::class, 'store'])->name('documento.store');
+
+// Route::resource('/documentos', DocumentoController::class,'listarDocumentos');
 
 Route::get('/assinaturas', [AssinaturaController::class, 'listarAssinaturas'])->name('assinaturas.listar');
 Route::get('/assinaturas/{id}', [AssinaturaController::class, 'listarAssinatura'])->name('assinatura.listar');

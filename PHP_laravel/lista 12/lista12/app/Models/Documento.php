@@ -8,4 +8,27 @@ use Illuminate\Database\Eloquent\Model;
 class Documento extends Model
 {
     use HasFactory;
+
+    protected $fillable = 
+    [
+        'title',
+        'tamanho',
+        'numeroAssinatura',
+        'assinaturaResponsavel',
+        'quantiadePaginas'
+        
+    ]; 
+
+  
+    public function cadastrarDocumento($dados){
+        
+        return $documento = Documento::create([
+            'title' => $dados->title,
+            'tamanho' => $dados->tamanho,
+            'numeroAssinatura' => $dados->numeroAssinatura,
+            'assinaturaResponsavel' => $dados->assinaturaResponsavel,
+            'quantiadePaginas' => $dados->quantiadePaginas
+        ]);
+      
+    }
 }
