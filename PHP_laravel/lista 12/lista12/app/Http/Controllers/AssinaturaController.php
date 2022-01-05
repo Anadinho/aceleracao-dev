@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InsertAssinaturaRequest;
 use App\Models\Assinatura;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +29,7 @@ class AssinaturaController extends Controller
         return view('assinatura.criaass');
     }
 
-    public function store(Request $request){
+    public function store(InsertAssinaturaRequest $request){
         DB::beginTransaction();
         
         $assinatura = new Assinatura();

@@ -10,7 +10,7 @@ php artisan make:model Imovel -cmf
 
 php artisan db:seed --class-ArtigoSeeder
 
-php artisan make:request InsertTraineeRequest
+php artisan make:request InsereAssinaturaRequest
 
 php artisan route:list
 
