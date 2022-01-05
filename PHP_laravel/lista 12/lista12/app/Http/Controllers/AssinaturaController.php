@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Assinatura;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class AssinaturaController extends Controller
 {
 
@@ -20,6 +22,19 @@ class AssinaturaController extends Controller
         }
 
         return view('assinatura.exibeass', compact('assinatura'));
+    }
+
+    public function criarAssinatura(){
+        return view('assinatura.criaass');
+    }
+
+    public function store(Request $request){
+        DB::beginTransaction();
+        
+        $assinatura = new Assinatura();
+        $assinatura = $assinatura->cadastrarAssinatura($request);
+        DB::commit();
+        return redirect()->route('assinaturas.listar')->with('message',"A Assinatura $assinatura->assinaturaPadrao  foi criada com sucesso!");       
     }
     
 }

@@ -1,3 +1,5 @@
+@extends('layouts.layout')
+@include('layouts.alerts')
 <hr>
 <h1>Minhas Assinaturas</h1>
 <ul>

@@ -26,7 +26,7 @@ Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento'])->
 Route::post('/documento/novo', [DocumentoController::class, 'store'])->name('documento.store');
 Route::delete('/documento/remover/{id}', [DocumentoController::class, 'deletarDocumento'])->name('documento.deletar');
 
-// Route::resource('/documentos', DocumentoController::class,'listarDocumentos');
-
 Route::get('/assinaturas', [AssinaturaController::class, 'listarAssinaturas'])->name('assinaturas.listar');
 Route::get('/assinaturas/{id}', [AssinaturaController::class, 'listarAssinatura'])->name('assinatura.listar');
+Route::get('/assinatura/criar', [AssinaturaController::class, 'criarAssinatura'])->name('assinaturas.criar');
+Route::post('/assinaturas/novo', [AssinaturaController::class, 'store'])->name('assinatura.store');
