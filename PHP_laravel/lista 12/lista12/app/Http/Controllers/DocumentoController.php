@@ -50,4 +50,14 @@ class DocumentoController extends Controller
         DB::commit();
         return redirect()->route('documentos.listar')->with('message',"O Documento $documento->title  foi criado com sucesso!");       
     }
+
+    public function deletarDocumento($id){
+        $documento = Documento::find($id);
+        if(!$documento){
+            return redirect()->back();
+        }
+        $documento->delete();
+        return redirect()->route('documentos.listar')->with('message', "Documento {$documento->title} deletada com sucesso!");
+    }
+        
 }

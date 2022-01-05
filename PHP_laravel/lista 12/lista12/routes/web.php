@@ -24,6 +24,7 @@ Route::get('/documento/criar', [DocumentoController::class, 'criarDocumento'])->
 Route::get('/documentos', [DocumentoController::class, 'listarDocumentos'])->name('documentos.listar');
 Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento'])->name('documento.listar');
 Route::post('/documento/novo', [DocumentoController::class, 'store'])->name('documento.store');
+Route::delete('/documento/remover/{id}', [DocumentoController::class, 'deletarDocumento'])->name('documento.deletar');
 
 // Route::resource('/documentos', DocumentoController::class,'listarDocumentos');
 

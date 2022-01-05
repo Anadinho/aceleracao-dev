@@ -24,11 +24,12 @@ class InsertDocumentoRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => "required|string|min:10|max:200",
+            'title' => "required|string|min:10&max:200",
             'tamanho' =>"required|numeric|min:1|max:3",
-            'numeroAssinatura' =>"required|numeric|min:1|max:2",
+            'numeroAssinatura' =>"required|numeric|min:1",
+            'numeroAssinatura' =>"required|numeric|max:2",
             'assinaturaResponsavel' =>"required|string|min:10|max:200",
-            'quantiadePaginas' => "required|numeric|min:1|max:2"
+            'quantiadePaginas' => "required|numeric|min:1 & max:2"
         ];
     }
 
