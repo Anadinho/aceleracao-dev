@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InsertDocumentoRequest;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\{Documento};
@@ -41,7 +42,7 @@ class DocumentoController extends Controller
         return view('documentos.criadoc');
     }
 
-    public function store(Request $request){
+    public function store(InsertDocumentoRequest $request){
         DB::beginTransaction();
         
         $documento = new Documento();
