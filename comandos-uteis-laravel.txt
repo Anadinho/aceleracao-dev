@@ -11,8 +11,8 @@ php artisan make:model Imovel -cmf
 php artisan make:factory DocumentoFactory --model=Documento
 
 php artisan make:seeder UsersTableSeeder
-
 php artisan db:seed --class=ArtigoSeeder
+php artisan db:seed
 
 php artisan make:request InsereAssinaturaRequest
 
@@ -21,4 +21,10 @@ php artisan route:list
 php artisan make:resource LessonResource
 
 php artisan make:controller api/LessonController --api
+
+
+
+
+
+mysqldump -u root -p laravel > laravel.sql
 
