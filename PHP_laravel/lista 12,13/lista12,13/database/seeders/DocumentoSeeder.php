@@ -2,19 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Documento;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class DocumentoSeeder extends Seeder
 {
     /**
-     * Seed the application's database.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
-        $this->call([
-            DocumentoSeeder::class
-        ]);
+        Documento::factory(3)->create();
     }
 }

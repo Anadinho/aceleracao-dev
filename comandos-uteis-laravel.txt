@@ -8,7 +8,11 @@ php artisan serve
 
 php artisan make:model Imovel -cmf
 
-php artisan db:seed --class-ArtigoSeeder
+php artisan make:factory DocumentoFactory --model=Documento
+
+php artisan make:seeder UsersTableSeeder
+
+php artisan db:seed --class=ArtigoSeeder
 
 php artisan make:request InsereAssinaturaRequest
 
@@ -17,3 +21,4 @@ php artisan route:list
 php artisan make:resource LessonResource
 
 php artisan make:controller api/LessonController --api
+
