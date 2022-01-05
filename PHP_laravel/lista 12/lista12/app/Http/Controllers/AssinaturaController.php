@@ -37,5 +37,14 @@ class AssinaturaController extends Controller
         DB::commit();
         return redirect()->route('assinaturas.listar')->with('message',"A Assinatura $assinatura->assinaturaPadrao  foi criada com sucesso!");       
     }
+
+    public function deletarAssinatura($id){
+        $assinatura = Assinatura::find($id);
+        if(!$assinatura){
+            return redirect()->back();
+        }
+        $assinatura->delete();
+        return redirect()->route('assinaturas.listar')->with('message', "Assinatura {$assinatura->assinaturaPadrao} deletada com sucesso!");
+    }
     
 }

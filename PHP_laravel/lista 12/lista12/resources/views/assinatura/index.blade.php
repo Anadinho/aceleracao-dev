@@ -1,15 +1,14 @@
 @extends('layouts.layout')
 @include('layouts.alerts')
 <hr>
-<h1>Minhas Assinaturas</h1>
+<h1>Minhas Assinaturas - <a href="{{route('assinaturas.criar')}}">Criar nova Assinatura</a></h1>
 <ul>
-@foreach ($assinaturas as $k => $item)
-    <h3>Assinatura {{$k + 1}}</h3>
-    <li>{{$item->id}}</li>
-    <li>{{$item->quantidadeAssinatura}}</li>
-    <li>{{$item->assinaturaPadrao}}</li>
-    <li>{{$item->created_at}}</li>
-    <li>{{$item->updated_at}}</li>
-    <a href="{{route('assinatura.listar', $item['id'])}}">Visualizar</a> <br>
+@foreach ($assinaturas as $k => $assinatura)
+    <h3>Assinatura {{$assinatura->id}}</h3>
+    <li>{{$assinatura->quantidadeAssinatura}}</li>
+    <li>{{$assinatura->assinaturaPadrao}}</li>
+    <li>{{$assinatura->created_at}}</li>
+    <li>{{$assinatura->updated_at}}</li>
+    <a href="{{route('assinatura.listar', $assinatura->id)}}">Visualizar</a> <br>
 @endforeach
 </ul>
