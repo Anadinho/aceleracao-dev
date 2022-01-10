@@ -22,7 +22,7 @@ php artisan make:resource LessonResource
 
 php artisan make:controller api/LessonController --api
 
-
+php artisan make:middleware ValidaPermissao
 
 
 
