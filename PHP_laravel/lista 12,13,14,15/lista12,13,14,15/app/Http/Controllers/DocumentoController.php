@@ -59,5 +59,14 @@ class DocumentoController extends Controller
         $documento->delete();
         return redirect()->route('documentos.listar')->with('message', "Documento {$documento->title} deletada com sucesso!");
     }
+
+    public function login(){
+        $usuario = ["id" => rand(3000, 20000), "name" =>"Gabriel"];
+        session(["usuario" => $usuario]);
+    }
+
+    public function logout(){
+        session()->forget('usuario');
+    }
         
 }
