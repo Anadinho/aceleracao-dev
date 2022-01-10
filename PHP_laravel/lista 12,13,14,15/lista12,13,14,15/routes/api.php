@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/documentos', [DocumentoController::class, 'listarDocumentos']);
+Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento']);
