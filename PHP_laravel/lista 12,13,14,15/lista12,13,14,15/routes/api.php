@@ -19,5 +19,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/documentos', [DocumentoController::class, 'listarDocumentos']);
-Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento']);
+
+Route::namespace('App\Http\Controllers\Api')->prefix('documentos')->group(function(){
+    Route::get('/', 'DocumentoController@listarDocumentos');
+    Route::post('/novo', 'DocumentoController@insereDocumento')->middleware('auth.basic');
+    Route::get('/{id}', 'DocumentoController@listarDocumento');
+    Route::put('/{id}', 'DocumentoController@editarDocumento');
+    Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+});
+

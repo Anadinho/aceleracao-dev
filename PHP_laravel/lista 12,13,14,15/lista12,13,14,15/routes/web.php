@@ -25,6 +25,12 @@ Route::get('/documentos', [DocumentoController::class, 'listarDocumentos'])->nam
 Route::get('/documento/{id}', [DocumentoController::class, 'listarDocumento'])->name('documento.listar');
 Route::post('/documento/novo', [DocumentoController::class, 'store'])->name('documento.store');
 
+
+Route::namespace('App\Http\Controllers\api')->prefix('documentos')->group(function(){
+    Route::get('/', [DocumentoController::class, 'listarDocumentos']);
+    Route::get('/{id}', [DocumentoController::class, 'listarDocumento']);
+});
+
 Route::middleware('validaPermissao')->group(function (){
     Route::delete('/documento/remover/{id}', [DocumentoController::class, 'deletarDocumento'])->name('documento.deletar');
 });
