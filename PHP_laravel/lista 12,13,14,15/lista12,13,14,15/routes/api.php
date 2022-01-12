@@ -24,6 +24,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function(){
 
     Route::post('/login', 'LoginApiController@login')->name('login');
     Route::get('/logout', 'LoginApiController@logout')->name('logout');
+    Route::get('/refresh', 'LoginApiController@refresh')->name('refresh');
 
     Route::group(["middleware" => "jwt.auth"], function(){
         Route::prefix('documentos')->group(function(){
