@@ -15,8 +15,13 @@ class LoginApiController extends Controller
         if(!$token){
             return response()->json(["usuario invalido"], 401);
         }
-        
+
         return response()->json(["token" => $token]);
+    }
+
+    public function logout(){
+        auth('api')->logout();
+        return response()->json(["Mensagem" =>"Deslogado com sucesso"]);
     }
 }
  

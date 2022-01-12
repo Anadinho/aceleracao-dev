@@ -23,14 +23,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::namespace('App\Http\Controllers\Api')->group(function(){
 
     Route::post('/login', 'LoginApiController@login')->name('login');
+    Route::get('/logout', 'LoginApiController@logout')->name('logout');
 
-    Route::prefix('documentos')->group(function(){
-        Route::get('/', 'DocumentoController@listarDocumentos');
-        Route::post('/novo', 'DocumentoController@insereDocumento')->middleware('auth.basic');
-        Route::get('/{id}', 'DocumentoController@listarDocumento');
-        Route::put('/{id}', 'DocumentoController@editarDocumento');
-        Route::delete('/{id}', 'DocumentoController@deletarDocumento');
-    });
+    Route::group(["middleware" => "jwt.auth"], function(){
+        Route::prefix('documentos')->group(function(){
+            Route::get('/', 'DocumentoController@listarDocumentos');
+            Route::post('/novo', 'DocumentoController@insereDocumento');
+            Route::get('/{id}', 'DocumentoController@listarDocumento');
+            Route::put('/{id}', 'DocumentoController@editarDocumento');
+            Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+        });
+    });   
     
 });
 
