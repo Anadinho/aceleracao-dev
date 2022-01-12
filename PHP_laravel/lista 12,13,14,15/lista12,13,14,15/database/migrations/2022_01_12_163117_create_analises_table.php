@@ -13,7 +13,7 @@ class CreateAnalisesTable extends Migration
      */
     public function up()
     {
-        Schema::create('analises', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('analises', function (Blueprint $table) {
             $table->id();
             $table->foreignId('documento_id')->constrained('documentos');
             $table->foreignId('assinatura_id')->constrained('assinaturas');

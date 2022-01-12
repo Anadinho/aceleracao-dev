@@ -13,7 +13,7 @@ class CreateDocumentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('documentos', function (Blueprint $table) {
+        Schema::connection('pgsql')->create('documentos', function (Blueprint $table) {
             $table->id();
             $table->string('title', 150);
             $table->integer('tamanho');
