@@ -25,9 +25,7 @@ class LoginApiController extends Controller
     }
 
     public function refresh(){
-        $token = auth('api')->refresh();
-
-        
+        $token = auth('api')->refresh();        
         return response()->json([
             "token" =>$token,
             "Aviso" =>"Token Atualizado"
