@@ -25,7 +25,7 @@ class InsertAssinaturaRequest extends FormRequest
     {
         return [
             'quantidadeAssinatura' => "required|numeric|min:10|max:200",
-            'assinaturaPadrao' =>"required|numeric|min:10|max:200",
+            'assinaturaPadrao' =>"required|string|min:10|max:200",
             'numeroVezesUsada' =>"required|numeric|min:1|max:2",
         ];
     }

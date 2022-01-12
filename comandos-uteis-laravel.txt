@@ -6,28 +6,28 @@ php artisan migrate
 
 php artisan serve
 
-php artisan make:model Imovel -cmf
+php artisan make:model Analise -cmf
 
-php artisan make:factory DocumentoFactory --model=Documento
+php artisan make:factory AssinaturaFactory --model=Assinatura
 
-php artisan make:seeder UsersTableSeeder
-php artisan db:seed --class=ArtigoSeeder
+php artisan make:seeder AnaliseSeeder
+php artisan db:seed --class=AnaliseSeeder
 php artisan db:seed
 
 //dropa e popula novamente
 php artisan migrate:fresh --seed
 
-php artisan make:request InsereAssinaturaRequest
+php artisan make:request InsereRelatorioRequest
 
 php artisan route:list
 
 //cria estrutura de controle  antes de passar para api
-php artisan make:resource DocumentoResource
-php artisan make:resource DocumentoResourceColletion
+php artisan make:resource AnaliseResource
+php artisan make:resource AnaliseResourceCollection
 
 
 //criar controller com recurso com apção para api ou nao
-php artisan make:controller api/LessonController --resource --api
+php artisan make:controller api/AnaliseController --resource --api
 
 //criar um middleware, lembrar de adicionar no kernel de http
 php artisan make:middleware ValidaPermissao
