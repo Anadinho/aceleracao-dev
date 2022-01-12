@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\{DocumentoController};
+use App\Http\Controllers\Api\{DocumentoController, LoginApiController};
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +20,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::namespace('App\Http\Controllers\Api')->prefix('documentos')->group(function(){
-    Route::get('/', 'DocumentoController@listarDocumentos');
-    Route::post('/novo', 'DocumentoController@insereDocumento')->middleware('auth.basic');
-    Route::get('/{id}', 'DocumentoController@listarDocumento');
-    Route::put('/{id}', 'DocumentoController@editarDocumento');
-    Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+Route::namespace('App\Http\Controllers\Api')->group(function(){
+
+    Route::post('/login', 'LoginApiController@login')->name('login');
+
+    Route::prefix('documentos')->group(function(){
+        Route::get('/', 'DocumentoController@listarDocumentos');
+        Route::post('/novo', 'DocumentoController@insereDocumento')->middleware('auth.basic');
+        Route::get('/{id}', 'DocumentoController@listarDocumento');
+        Route::put('/{id}', 'DocumentoController@editarDocumento');
+        Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+    });
+    
 });
 
