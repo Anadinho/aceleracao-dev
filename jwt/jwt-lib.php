@@ -33,7 +33,7 @@ function setToken(Pessoa $pessoa)
                            ->getToken($configuration->signer(), $configuration->signingKey());
     
     // echo "Token JWT: ". $token->toString();
-    $pessoa->setToken($token);
+    $pessoa->setToken($token->toString());
 }
 
     $pessoa1 = new Pessoa("gabriel","gabriel@email.com","dev","Ensino sup");
@@ -42,13 +42,14 @@ function setToken(Pessoa $pessoa)
     $pessoa4 = new Pessoa("igor","igor@email.com","engenheiro","Ensino superior");
     $pessoa5 = new Pessoa("joana","joana@email.com","entregador","Ensino Medio");
 
-    $pessoas = [$pessoa1,$pessoa2, $pessoa3, $pessoa4, $pessoa5];
+    $pessoas = [$pessoa1,$pessoa2, $pessoa3, $pessoa4, $pessoa5];   
+
+    var_dump($pessoa1);
 
     foreach($pessoas as $pessoa){
         setToken($pessoa);
+        print_r($pessoa->toString());
     }
-    
-    var_dump($pessoa1);
 
 
 
