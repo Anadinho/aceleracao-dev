@@ -26,15 +26,24 @@ Route::namespace('App\Http\Controllers\Api')->group(function(){
     Route::get('/logout', 'LoginApiController@logout')->name('logout');
     Route::get('/refresh', 'LoginApiController@refresh')->name('refresh');
 
-    Route::group(["middleware" => "jwt.auth"], function(){
-        Route::prefix('documentos')->group(function(){
-            Route::get('/', 'DocumentoController@listarDocumentos');
-            Route::post('/novo', 'DocumentoController@insereDocumento');
-            Route::get('/{id}', 'DocumentoController@listarDocumento');
-            Route::put('/{id}', 'DocumentoController@editarDocumento');
-            Route::delete('/{id}', 'DocumentoController@deletarDocumento');
-        });
-    });   
+
+    Route::prefix('documentos')->group(function(){
+        Route::get('/', 'DocumentoController@listarDocumentos');
+        Route::post('/novo', 'DocumentoController@insereDocumento');
+        Route::get('/{id}', 'DocumentoController@listarDocumento');
+        Route::put('/{id}', 'DocumentoController@editarDocumento');
+        Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+    });
+
+    // Route::group(["middleware" => "jwt.auth"], function(){
+    //     Route::prefix('documentos')->group(function(){
+    //         Route::get('/', 'DocumentoController@listarDocumentos');
+    //         Route::post('/novo', 'DocumentoController@insereDocumento');
+    //         Route::get('/{id}', 'DocumentoController@listarDocumento');
+    //         Route::put('/{id}', 'DocumentoController@editarDocumento');
+    //         Route::delete('/{id}', 'DocumentoController@deletarDocumento');
+    //     });
+    // });   
     
 });
 

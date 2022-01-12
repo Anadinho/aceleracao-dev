@@ -23,6 +23,7 @@ class DocumentoController extends Controller
     public function __construct(Documento $model)
     {
         $this->model = $model;
+        $this->middleware('jwt.auth');
     }
 
     public function listarDocumentos(Request $request){
