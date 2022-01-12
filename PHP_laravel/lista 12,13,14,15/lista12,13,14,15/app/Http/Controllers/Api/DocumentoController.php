@@ -82,14 +82,6 @@ class DocumentoController extends Controller
         return response()->json(['message' => 'Documento Excluido com sucesso']);
     }
 
-    public function login(){
-        $usuario = ["id" => rand(3000, 20000), "name" =>"Gabriel"];
-        session(["usuario" => $usuario]);
-    }
-
-    public function logout(){
-        session()->forget('usuario');
-    }
 
     
         
