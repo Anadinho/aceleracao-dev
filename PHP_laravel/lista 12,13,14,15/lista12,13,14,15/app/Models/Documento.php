@@ -20,6 +20,7 @@ class Documento extends Model
         
     ]; 
     protected $connection = "pgsql";
+    
   
     public function cadastrarDocumento($dados){
         
