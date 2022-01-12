@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\InsertDocumentoRequest;
 use App\Http\Resources\DocumentoResource;
 use App\Http\Resources\DocumentoResourceCollection;
 use App\Http\Resources\DocumentoResourceColletion;
 use DateTime;
 use Illuminate\Http\Request;
 use App\Models\{Documento};
+use App\Repository\DocumentoRepository;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -17,9 +18,28 @@ use Illuminate\Support\Facades\Log;
 class DocumentoController extends Controller
 {
 
-    public function listarDocumentos(){
-        $documentos = Documento::paginate(10);    
-        return new DocumentoResourceCollection($documentos);
+    private $model;
+
+    public function __construct(Documento $model)
+    {
+        $this->model = $model;
+    }
+
+    public function listarDocumentos(Request $request){
+        $documentos =  $this->model;
+        $documentoRepository = new DocumentoRepository($documentos);
+
+        if($request->has('campos'))
+        {
+            $documentos = $documentoRepository->filterFields($request);
+        }
+        
+        if($request->has('conditions'))
+        {
+            $documentos = $documentoRepository->filtraComCondicao($request);
+        }  
+        
+        return new DocumentoResourceCollection($documentos->paginate(25));
     }
 
     public function listarDocumento($id){
@@ -32,7 +52,7 @@ class DocumentoController extends Controller
         return new DocumentoResource($documento);
     }
 
-    public function insereDocumento(Request $form){
+    public function insereDocumento(InsertDocumentoRequest $form){
         $documento = Documento::create($form->all());
 
         if(!$documento){
