@@ -19,6 +19,7 @@ class AnaliseController extends Controller
     public function __construct(Analise $model)
     {
         $this->model = $model;
+        $this->middleware('jwt.auth');
     }
 
     /**

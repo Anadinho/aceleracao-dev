@@ -19,7 +19,7 @@ class Documento extends Model
         'quantiadePaginas'
         
     ]; 
-
+    protected $connection = "pgsql";
   
     public function cadastrarDocumento($dados){
         

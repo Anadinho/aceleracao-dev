@@ -17,6 +17,7 @@ class Analise extends Model
         'dataAnalise',
         'visualizadores'        
     ]; 
+    protected $connection = "pgsql";
 
     public function documento(){
         return $this->hasOne(Documento::class, 'id','documento_id');

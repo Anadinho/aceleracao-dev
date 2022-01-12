@@ -15,6 +15,7 @@ class Assinatura extends Model
         'assinaturaPadrao',
         'numeroVezesUsada',        
     ]; 
+    protected $connection = "pgsql";   
 
   
     public function cadastrarAssinatura($dados){

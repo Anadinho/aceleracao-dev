@@ -17,6 +17,7 @@ class AssinaturaController extends Controller
     public function __construct(Assinatura $model)
     {
         $this->model = $model;
+        $this->middleware('jwt.auth');
     }
 
     /**
