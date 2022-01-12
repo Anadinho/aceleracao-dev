@@ -29,10 +29,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function(){
 
     Route::prefix('documentos')->group(function(){
         Route::get('/', 'DocumentoController@listarDocumentos');
-        Route::post('/novo', 'DocumentoController@insereDocumento');
         Route::get('/{id}', 'DocumentoController@listarDocumento');
-        Route::put('/{id}', 'DocumentoController@editarDocumento');
-        Route::delete('/{id}', 'DocumentoController@deletarDocumento');
     });
 
     Route::apiResource('/assinaturas', 'AssinaturaController');
